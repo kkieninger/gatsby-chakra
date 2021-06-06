@@ -14,7 +14,7 @@ const Layout: FC = ({ children }) => {
   return (
     <Container maxW="900" minH="100vh" display="flex" flexDirection="column">
       <Header { ...{ links } } />
-      <Box as="main" mt="16" flexGrow={1}>{children}</Box>
+      <Box as="main" mt="12" flexGrow={1}>{children}</Box>
       <Footer />
     </Container>
   )

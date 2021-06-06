@@ -4,6 +4,7 @@ import { GitHubIcon, LinkedInIcon, TwitterIcon } from './icons/social';
 
 const iconStyles = {
   transition: 'all 0.2s ease',
+  color: 'text',
   _hover: { color: 'primary' },
 };
 

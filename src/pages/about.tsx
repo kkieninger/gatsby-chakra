@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { graphql, PageProps } from 'gatsby';
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { Box, Center, Text, Heading, Link } from '@chakra-ui/react';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
@@ -15,51 +16,49 @@ interface DataProps {
 }
 
 const AboutPage: FC<PageProps<DataProps>> = ({ data }) => {
-  // const photo = data.photo.childImageSharp.fixed;
   const photo = data.photo?.childImageSharp.gatsbyImageData;
 
   return (
     <Layout>
       <SEO title="About" />
-      <main>
-        <h1>about</h1>
-        <h2>
-          hi, i&#39;m <span>kevin.</span>
-        </h2>
-        <p>
-          i&#39;m a full-stack software engineer, with a strong focus in front-end development. i&#39;m <strong>passionate</strong> about software craftsmanship, engineering leadership,
+      <Box as="section">
+        <Heading fontSize="4xl" mb="8">about</Heading>
+        <Heading fontSize="2xl" mb="6">
+          hi, i&#39;m <Text as="span" color="primary">kevin.</Text>
+        </Heading>
+        <Text mb="3">
+          i&#39;m a full-stack software engineer, with a strong focus in front-end development. i&#39;m <Text as="strong">passionate</Text> about software craftsmanship, engineering leadership,
           and solving problems at the intersection between product and technical challenges.
-        </p>
-        <p>
-          <strong>outside of work</strong>, i&#39;m an avid baseball fan, music fanatic, bibliophile, and sci-fi geek. lately you can find me unwinding with a good video game, attempting to golf
-          (and failing miserably at it), and slowly amassing a <a href="https://boardgamegeek.com/collection/user/kkieninger?own=1&subtype=boardgame&ff=1" target="_blank" rel="noopener">board game collection</a> to
+        </Text>
+        <Text mb="3">
+          <Text as="strong">outside of work</Text>, i&#39;m an avid baseball fan, music fanatic, bibliophile, and sci-fi geek. lately you can find me unwinding with a good video game, attempting to golf
+          (and failing miserably at it), and slowly amassing a <Link href="https://boardgamegeek.com/collection/user/kkieninger?own=1&subtype=boardgame&ff=1" isExternal>board game collection</Link> to
           collect dust on my shelves.
-        </p>
-        <p>and as for <strong>vices</strong>? i&#39;m a whiskey aficionado, an amateur mixologist and a cocktail enthusiast. &#x1F943;</p>
+        </Text>
+        <Text mb="3">and as for <Text as="strong">vices</Text>? i&#39;m a whiskey aficionado, an amateur mixologist and a cocktail enthusiast. &#x1F943;</Text>
         {photo && (
-          <div>
+          <Center my="6">
             <GatsbyImage image={photo} alt="Kevin Profile Picture" />
-          </div>
+          </Center>
         )}
-        <h2>technology</h2>
-        <p>
+        <Heading fontSize="2xl" mb="6">technology</Heading>
+        <Text mb="3">
           a few of my favorite tools and technologies:
-        </p>
+        </Text>
         <Technologies />
-        <p>
-          <strong>this site</strong> was built using gatsby, react, typescript, and emotion. the blogs are written with simple markdown files, and the whole thing
-          is deployed via netlify. you can find the <a href="https://github.com/kkieninger/gatsby-site" target="_blank" rel="noopener">full source code here</a>, or you can
-          build your own with this <a href="https://github.com/kkieninger/gatsby-typescript-blog-starter" target="_blank" rel="noopener">template</a>, which is an extension of
-          the <a href="https://github.com/gatsbyjs/gatsby-starter-blog" target="_blank" rel="noopener">fantastic gatsby starter</a>, with a few of my own preferences baked in.
-          if you have any questions or if you find any problems, please feel free to open up an issue on github.
-        </p>
-        <h2>contact</h2>
-        <p>
-          i&#39;m not much for social media these days, but i try my best to monitor my handles below. if you have a project you want to work on together, or just want to chat, i&#39;d love to hear from you.</p>
-        <p>
-          email: <a href="mailto:ktkienin@gmail.com">ktkienin@gmail.com</a>
-        </p>
-      </main>
+        <Text mb="3">
+          <Text as="strong">this site</Text> was built using gatsby, react, typescript, and chakra-ui. the blogs are written with simple markdown files, and the whole thing
+          is deployed via gatsby cloud. you can find the <Link href="https://github.com/kkieninger/gatsby-chakra" isExternal>full source code here</Link>, or you can
+          build your own with this <Link href="https://github.com/gatsbyjs/gatsby-starter-blog" isExternal>fantastic gatsby starter</Link>.
+        </Text>
+        <Heading fontSize="2xl" my="6">contact</Heading>
+        <Text mb="3">
+          i&#39;m not much for social media these days, but i try my best to monitor my handles below. if you have a project you want to work on together, or just want to chat, i&#39;d love to hear from you.
+        </Text>
+        <Text mb="3">
+          email: <Link href="mailto:ktkienin@gmail.com">ktkienin@gmail.com</Link>
+        </Text>
+      </Box>
     </Layout>
   );
 };

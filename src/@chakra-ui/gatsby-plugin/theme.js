@@ -22,6 +22,17 @@ const theme = {
     secondary: '#FDF9F5',
     text: '#313332',
   },
+  fonts: {
+    body: 'Poppins, system-ui, sans-serif',
+    heading: 'Poppins, system-ui, sans-serif',
+  },
+  components: {
+    Link: {
+      baseStyle: {
+        color: 'primary',
+      },
+    },
+  },
 };
 
 export default extendTheme(theme);
