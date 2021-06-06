@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { graphql, PageProps } from 'gatsby';
+import { Box, Heading, Text } from '@chakra-ui/react';
 
 // Types
 import { Job } from '../types';
@@ -30,19 +31,19 @@ const HomePage: FC<PageProps<DataProps>> = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section>
-        <p>
-          hello, I'm <span>kevin</span>, a software engineer based
+      <Box as="section" mb="8">
+        <Text fontSize="2xl" fontWeight="600">
+          hello, I'm <Text as="span" color="primary">kevin</Text>, a software engineer based
           in metro detroit. I love to build tools for the modern web, and I specialize in lots of
           flavors of javascript, but namely reactjs, vuejs, typescript, nodejs, and graphql.
-        </p>
-      </section>
-      <section>
-        <h3>current</h3>
+        </Text>
+      </Box>
+      <Box as="section">
+        <Heading fontSize="3xl" mt="3" mb="5">current</Heading>
         {currentJobs.map((job, index) => <JobListing key={index} {...job} />)}
-        <h3>previous</h3>
+        <Heading fontSize="3xl" mt="3" mb="5">previous</Heading>
         {previousJobs.map((job, index) => <JobListing key={index} {...job} />)}
-      </section>
+      </Box>
     </Layout>
   );
 };

@@ -1,41 +1,49 @@
 import React, { FC } from 'react';
+import { Flex, Divider, Link, Text } from '@chakra-ui/react';
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from './icons/social';
 
-import GitHubIcon from '../components/icons/GitHubIcon';
-import LinkedInIcon from '../components/icons/LinkedInIcon';
-import TwitterIcon from '../components/icons/TwitterIcon';
-
-const Footer: FC = () => {
-  return (
-    <footer>
-      <span>kevin kieninger | {new Date().getFullYear()}</span>
-      <nav>
-        <a
-          href="//github.com/kkieninger"
-          target="_blank"
-          rel="noopener"
-        >
-          <GitHubIcon />
-          <span>Link to GitHub</span>
-        </a>
-        <a
-          href="//linkedin.com/in/kkieninger"
-          target="_blank"
-          rel="noopener"
-        >
-          <LinkedInIcon />
-          <span>Link to LinkedIn</span>
-        </a>
-        <a
-          href="//twitter.com/kevinkieninger"
-          target="_blank"
-          rel="noopener"
-        >
-          <TwitterIcon />
-          <span>Link to Twitter</span>
-        </a>
-      </nav>
-    </footer>
-  );
+const iconStyles = {
+  transition: 'all 0.2s ease',
+  _hover: { color: 'primary' },
 };
+
+const socialLinks = [
+  {
+    platform: 'GitHub',
+    href: 'https://github.com/kkieninger',
+    icon: <GitHubIcon {...iconStyles} />,
+  },
+  {
+    platform: 'LinkedIn',
+    href: 'https://linkedin.com/in/kkieninger',
+    icon: <LinkedInIcon {...iconStyles} />,
+  },
+  {
+    platform: 'Twitter',
+    href: 'https://twitter.com/kevinkieninger',
+    icon: <TwitterIcon {...iconStyles} />,
+  },
+];
+
+const Footer: FC = () => (
+  <Flex
+    as="footer"
+    direction="column"
+    align="center"
+    my="10"
+    p="3"
+  >
+    <Divider width="95px" borderColor="text" mb="5" />
+    <Text fontWeight="300">kevin kieninger | {new Date().getFullYear()}</Text>
+    <Flex as="nav" my="4">
+      {socialLinks.map(link => (
+        <Link href={link.href} isExternal mx="3">
+          {link.icon}
+          <Text fontSize="0">Link to {link.platform}</Text>
+        </Link>  
+      ))}
+    </Flex>
+  </Flex>
+);
 
 export default Footer;

@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
+import { Container } from '@chakra-ui/react';
 import Header from './Header';
 import Footer from './Footer';
+import { Box } from '@chakra-ui/react';
 
 const Layout: FC = ({ children }) => {
   const links = [
@@ -10,11 +12,11 @@ const Layout: FC = ({ children }) => {
   ];
 
   return (
-    <div className="global-wrapper">
+    <Container maxW="900" minH="100vh" display="flex" flexDirection="column">
       <Header { ...{ links } } />
-      <main>{children}</main>
+      <Box as="main" mt="16" flexGrow={1}>{children}</Box>
       <Footer />
-    </div>
+    </Container>
   )
 }
 
