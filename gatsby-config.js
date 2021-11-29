@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Kevin Kieninger | Software Engineer`,
     author: {
-      name: `Kyle Mathews`,
+      name: `Kevin Kieninger`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://kkieninger.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `kkieninger`,
     },
   },
   plugins: [
@@ -123,6 +123,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-gatsby-cloud`,
+    `@chakra-ui/gatsby-plugin`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
