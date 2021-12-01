@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React, { ReactElement } from 'react';
 import { Container } from '@chakra-ui/react';
 import Header from './Header';
 import Footer from './Footer';
 import { Box } from '@chakra-ui/react';
 
-const Layout: FC = ({ children }) => {
+const Layout = ({ children }: { children: ReactElement | ReactElement[] }) => {
   const links = [
     { path: '/', label: 'home' },
     { path: '/writing', label: 'writing' },

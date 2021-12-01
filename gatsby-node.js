@@ -122,7 +122,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       company: "stockx",
       years: "2020-",
       current: true,
-      description: "building and maintaining the services that power the stockx marketplace as a software engineer.",
+      description: "building and maintaining the web platform that powers stockx.com as a software engineer.",
     },
     {
       title: "senior software engineer",

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { Box, Center, Text, Heading, Link } from '@chakra-ui/react';
@@ -15,7 +15,7 @@ interface DataProps {
   }
 }
 
-const AboutPage: FC<PageProps<DataProps>> = ({ data }) => {
+const AboutPage = ({ data }: PageProps<DataProps>) => {
   const photo = data.photo?.childImageSharp.gatsbyImageData;
 
   return (
@@ -56,7 +56,7 @@ const AboutPage: FC<PageProps<DataProps>> = ({ data }) => {
           i&#39;m not much for social media these days, but i try my best to monitor my handles below. if you have a project you want to work on together, or just want to chat, i&#39;d love to hear from you.
         </Text>
         <Text mb="3">
-          email: <Link href="mailto:ktkienin@gmail.com">ktkienin@gmail.com</Link>
+          email: <Link href="mailto:ktkienin@gmail.com">ktkienin(at)gmail.com</Link>
         </Text>
       </Box>
     </Layout>

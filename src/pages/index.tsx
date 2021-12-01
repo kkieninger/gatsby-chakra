@@ -1,10 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { Box, Heading, Text } from '@chakra-ui/react';
 
-// Types
 import { Job } from '../types';
-// Components
+
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import { JobListing } from '../components/JobListing';
@@ -24,7 +23,7 @@ interface DataProps {
   }
 }
 
-const HomePage: FC<PageProps<DataProps>> = ({ data }) => {
+const HomePage = ({ data }: PageProps<DataProps>) => {
   const currentJobs = data.currentJobs.nodes;
   const previousJobs = data.previousJobs.nodes;
 

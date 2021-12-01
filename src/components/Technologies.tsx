@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
-
 import {
   JavaScriptIcon,
   TypeScriptIcon,
@@ -11,6 +10,7 @@ import {
   HTMLIcon,
   CSSIcon,
   SassIcon,
+  ChakraIcon,
   PostgresIcon,
 } from '../components/icons/technology';
 
@@ -27,11 +27,12 @@ const technologies = [
   { name: 'vue.js', icon: VueIcon },
   { name: 'html', icon: HTMLIcon },
   { name: 'css', icon: CSSIcon },
+  { name: 'chakra ui', icon: ChakraIcon },
   { name: 'sass', icon: SassIcon },
   { name: 'postgresql', icon: PostgresIcon },
 ];
 
-const Technologies: FC = () => (
+const Technologies = () => (
   <Flex
     as="section"
     wrap="wrap"
@@ -48,7 +49,7 @@ const Technologies: FC = () => (
         my={3}
       >
         {<tech.icon {...iconStyles} />}
-        <Text>{tech.name}</Text>
+        <Text my={2} fontSize="sm">{tech.name}</Text>
       </Flex>
     ))}
   </Flex>

@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-
+import { Heading, Text } from '@chakra-ui/react';
 import { PostData } from '../types';
 
 import Layout from '../components/Layout';
@@ -13,18 +13,18 @@ interface DataProps {
   };
 }
 
-const WritingPage: FC<PageProps<DataProps>> = ({ data }) => {
+const WritingPage = ({ data }: PageProps<DataProps>) => {
   const posts = data.allMarkdownRemark.nodes;
 
   return (
     <Layout>
       <Seo title="All posts" />
-      <h1>writing</h1>
-      <Posts posts={posts} />
-
-      {!posts.length &&
-        <p>there's either no blog posts available right now, or we had trouble fetching them. please try again later.</p>
-      }
+      <Heading fontSize="4xl" mb="8">writing</Heading>
+      {posts.length ? (
+        <Posts posts={posts} />
+      ) : (
+        <Text>there's either no blog posts available right now, or we had trouble fetching them. please try again later.</Text>
+      )}
     </Layout>
   );
 };

@@ -1,9 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link, graphql, PageProps } from 'gatsby';
+import { Box, Heading } from '@chakra-ui/react';
 
 import { PostData } from '../types';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
+import { ArrowLeftIcon } from '../components/icons/utils';
 
 interface Props {
   site: {
@@ -14,7 +16,7 @@ interface Props {
   markdownRemark: PostData;
 }
 
-const BlogPostTemplate: FC<PageProps<Props>> = ({ data }) => {
+const BlogPostTemplate = ({ data }: PageProps<Props>) => {
   const post = data.markdownRemark;
 
   return (
@@ -23,23 +25,35 @@ const BlogPostTemplate: FC<PageProps<Props>> = ({ data }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
+      <Box as="article" itemScope itemType="http://schema.org/Article">
+        <Box as="header" mb="4">
+          <Heading
+            as="h1"
+            fontSize="4xl"
+            mb="8"
+            itemProp="headline"
+          >
+            {post.frontmatter.title}
+          </Heading>
+          <Heading
+            fontSize="2xl"
+            mb="6"
+            color="primary"
+          >
+            {post.frontmatter.date}
+          </Heading>
+        </Box>
+        <Box as="section"
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-      </article>
-      <nav>
-        <Link to="/writing">back to writing</Link>
-      </nav>
+      </Box>
+      <Box as="nav" my="6">
+        <Link to="/writing">
+          <ArrowLeftIcon verticalAlign="0.063rem" mr="1" boxSize="2" />
+          back to writing
+        </Link>
+      </Box>
     </Layout>
   );
 };

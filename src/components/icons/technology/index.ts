@@ -1,3 +1,4 @@
+export { default as ChakraIcon } from './ChakraUI';
 export { default as CSSIcon } from './CSSIcon';
 export { default as GraphQLIcon } from './GraphQLIcon';
 export { default as HTMLIcon } from './HTMLIcon';
