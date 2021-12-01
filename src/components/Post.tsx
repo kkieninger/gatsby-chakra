@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import { PostData } from '../types';
 
-const Post: FC<PostData> = (props) => {
+const Post = ({ fields, frontmatter, excerpt }: PostData) => {
   return (
     <article
       className="post-list-item"
@@ -12,18 +12,18 @@ const Post: FC<PostData> = (props) => {
       <header>
         <h2>
           <Link
-            to={props.fields.slug}
+            to={fields.slug}
             itemProp="url"
           >
-            <span itemProp="headline">{props.frontmatter.title}</span>
+            <span itemProp="headline">{frontmatter.title}</span>
           </Link>
         </h2>
-        <span>{props.frontmatter.date}</span>
+        <span>{frontmatter.date}</span>
       </header>
       <section>
         <p
           dangerouslySetInnerHTML={{
-            __html: props.frontmatter.description || props.excerpt,
+            __html: frontmatter.description || excerpt,
           }}
           itemProp="description"
         />

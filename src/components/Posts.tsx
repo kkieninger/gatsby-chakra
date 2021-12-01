@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-
+import React from 'react';
 import { PostData } from '../types';
 import Post from './Post';
 
@@ -7,7 +6,7 @@ interface Props {
   posts: PostData[];
 }
 
-const Posts: FC<Props> = ({ posts }) => (
+const Posts = ({ posts }: Props) => (
   <ol>
     {posts.map((post) =>
       <li key={post.fields.slug}>

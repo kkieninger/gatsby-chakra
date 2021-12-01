@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Flex, Divider, Link, Text } from '@chakra-ui/react';
 import { GitHubIcon, LinkedInIcon, TwitterIcon } from './icons/social';
 
@@ -26,7 +26,7 @@ const socialLinks = [
   },
 ];
 
-const Footer: FC = () => (
+const Footer = () => (
   <Flex
     as="footer"
     direction="column"

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link, graphql, PageProps } from 'gatsby';
 
 import { PostData } from '../types';
@@ -14,7 +14,7 @@ interface Props {
   markdownRemark: PostData;
 }
 
-const BlogPostTemplate: FC<PageProps<Props>> = ({ data }) => {
+const BlogPostTemplate = ({ data }: PageProps<Props>) => {
   const post = data.markdownRemark;
 
   return (

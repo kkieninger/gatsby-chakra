@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
-
 import {
   JavaScriptIcon,
   TypeScriptIcon,
@@ -31,7 +30,7 @@ const technologies = [
   { name: 'postgresql', icon: PostgresIcon },
 ];
 
-const Technologies: FC = () => (
+const Technologies = () => (
   <Flex
     as="section"
     wrap="wrap"

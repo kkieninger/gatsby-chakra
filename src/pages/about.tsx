@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { Box, Center, Text, Heading, Link } from '@chakra-ui/react';
@@ -15,7 +15,7 @@ interface DataProps {
   }
 }
 
-const AboutPage: FC<PageProps<DataProps>> = ({ data }) => {
+const AboutPage = ({ data }: PageProps<DataProps>) => {
   const photo = data.photo?.childImageSharp.gatsbyImageData;
 
   return (
