@@ -1,4 +1,5 @@
 import React from 'react';
+import { OrderedList, ListItem } from '@chakra-ui/react';
 import { PostData } from '../types';
 import Post from './Post';
 
@@ -7,13 +8,13 @@ interface Props {
 }
 
 const Posts = ({ posts }: Props) => (
-  <ol>
+  <OrderedList styleType="none" ml="0">
     {posts.map((post) =>
-      <li key={post.fields.slug}>
+      <ListItem key={post.fields.slug}>
         <Post {...post} />
-      </li>
+      </ListItem>
     )}
-  </ol>
+  </OrderedList>
 );
 
 export default Posts;

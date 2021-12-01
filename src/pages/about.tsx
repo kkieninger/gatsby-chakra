@@ -56,7 +56,7 @@ const AboutPage = ({ data }: PageProps<DataProps>) => {
           i&#39;m not much for social media these days, but i try my best to monitor my handles below. if you have a project you want to work on together, or just want to chat, i&#39;d love to hear from you.
         </Text>
         <Text mb="3">
-          email: <Link href="mailto:ktkienin@gmail.com">ktkienin@gmail.com</Link>
+          email: <Link href="mailto:ktkienin@gmail.com">ktkienin(at)gmail.com</Link>
         </Text>
       </Box>
     </Layout>

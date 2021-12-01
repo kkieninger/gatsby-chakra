@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
+import typography from './typography';
 
 const theme = {
   styles: {
@@ -9,12 +10,7 @@ const theme = {
         bg: 'secondary',
         color: 'text',
       },
-      a: {
-        color: 'primary',
-        _hover: {
-          textDecoration: 'underline',
-        },
-      }
+      ...typography,
     },
   },
   colors: {
@@ -27,6 +23,11 @@ const theme = {
     heading: 'Poppins, system-ui, sans-serif',
   },
   components: {
+    Heading: {
+      baseStyle: {
+        textTransform: 'lowercase',
+      },
+    },
     Link: {
       baseStyle: {
         color: 'primary',
