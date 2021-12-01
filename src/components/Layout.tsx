@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Container } from '@chakra-ui/react';
-import Header from './Header';
+import { Header } from './Header';
 import Footer from './Footer';
 import { Box } from '@chakra-ui/react';
 

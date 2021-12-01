@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { WordMarkLink, NavItem } from './styles';
+import React from 'react';
+import { WordMarkLink, NavItem } from './Header.styles';
 import { Box, Flex } from '@chakra-ui/react';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
   }[];
 }
 
-const Header: FC<Props> = ({ links }) => (
+const Header = ({ links }: Props) => (
   <Flex
     as="header"
     justifyContent="space-between"
@@ -21,10 +21,11 @@ const Header: FC<Props> = ({ links }) => (
     </WordMarkLink>
 
     <Box as="nav">
-      {links.map((link, index) => (
+      {links.map(link => (
         <NavItem
-          key={index}
+          key={link.path}
           to={link.path}
+          activeStyle={{ color: 'var(--chakra-colors-primary)' }}
         >{link.label}</NavItem>
       ))}
     </Box>
