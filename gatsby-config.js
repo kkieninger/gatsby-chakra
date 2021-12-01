@@ -3,9 +3,9 @@ module.exports = {
     title: `Kevin Kieninger | Software Engineer`,
     author: {
       name: `Kevin Kieninger`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `a software engineer based in Metro Detroit.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Personal site of Kevin Kieninger`,
     siteUrl: `https://kkieninger.gatsbyjs.io/`,
     social: {
       twitter: `kkieninger`,
@@ -116,9 +116,9 @@ module.exports = {
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#CC5500`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
